@@ -12,6 +12,8 @@ args = parser.parse_args()
 import os
 import json
 from collections import Counter,defaultdict
+import matplotlib.pyplot as plt
+import numpy as np
 
 # open the input path
 with open(args.input_path) as f:
