@@ -44,13 +44,13 @@ for path in args.input_paths:
             if k == 'JP':
                 JP.append(v)
     dates.append(date)
-
+print(CN)
 plt.plot(US, label = 'United States')
 plt.plot(CN, label = 'China')
-#plt.plot(IT, label = 'Italy')
-#plt.plot(FR, label = 'France')
-#plt.plot(ES, label = 'Spain')
-#plt.plot(JP, label = 'Japan')
+plt.plot(IT, label = 'Italy')
+plt.plot(FR, label = 'France')
+plt.plot(ES, label = 'Spain')
+plt.plot(JP, label = 'Japan')
 
 plt.title("Use of hashtags related to Coronavirus by country")
 plt.xlabel("Dates")
