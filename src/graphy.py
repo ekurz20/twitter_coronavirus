@@ -51,7 +51,7 @@ plt.plot(FR, label = 'France')
 plt.plot(ES, label = 'Spain')
 plt.plot(JP, label = 'Japan')
 
-plt.title("Use of hashtags related to Coronavirus by country")
+plt.title("Use of Hashtags Related to Coronavirus by Country")
 plt.xlabel("Dates")
 plt.ylabel("Occurances")
 
@@ -73,4 +73,4 @@ plt.legend(loc = 'upper right')
 
 plt.gcf().subplots_adjust(bottom=0.4)
 
-plt.savefig('graph.png')
+plt.savefig('graph2.png')
