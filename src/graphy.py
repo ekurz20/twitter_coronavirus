@@ -58,7 +58,7 @@ plt.legend()
 
 z = np.arange(len(dates))
 N=len(dates)
-plt.xticks(z,dates, rotation = 90,fontsize = 5)
+plt.xticks(z,dates, rotation = 90)
 
 plt.gca().margins(x=0)
 plt.gcf().canvas.draw()
