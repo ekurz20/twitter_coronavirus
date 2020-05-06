@@ -32,17 +32,17 @@ for path in args.input_paths:
         date = path[18:26]
         for k,v in objects:
             if k == 'US':
-                US.append(v)
+                US.append(np.log(v))
             if k == 'CN':
-                CN.append(v)
+                CN.append(np.log(v))
             if k == 'IT':
-                IT.append(v)
+                IT.append(np.log(v))
             if k == 'FR':
-                FR.append(v)
+                FR.append(np.log(v))
             if k == 'ES':
-                ES.append(v)
+                ES.append(np.log(v))
             if k == 'JP':
-                JP.append(v)
+                JP.append(np.log(v))
     dates.append(date)
 print(CN)
 plt.plot(US, label = 'United States')
@@ -56,6 +56,6 @@ plt.title("Use of hashtags related to Coronavirus by country")
 plt.xlabel("Dates")
 plt.ylabel("Occurances")
 z = np.arange(len(dates))
-plt.xticks(z,dates)
+plt.xticks(z,dates, rotation = 90)
 plt.legend()
 plt.savefig('test.png')
