@@ -27,18 +27,8 @@ if args.percent:
         counts[args.key][k] /= counts['_all'][k]
 
 # print the count values
-objects = []
-values = []
 items = sorted(counts[args.key].items(), key=lambda item: (item[1],item[0]), reverse=True)
 for k,v in items:
     print(k,':',v)
-    objects.append(k)
-    values.append(v)
-z = len(objects)
-y_pos = np.arange(z)
-plt.bar(y_pos, values, align='center',alpha=0.5)
-plt.xticks(y_pos, objects)
-plt.ylabel('Occurance')
-plt.title(args.key)
-plt.xlabel('Language')
-plt.savefig('test.png')
+
+
