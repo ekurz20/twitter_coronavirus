@@ -54,7 +54,18 @@ plt.plot(JP, label = 'Japan')
 plt.title("Use of hashtags related to Coronavirus by country")
 plt.xlabel("Dates")
 plt.ylabel("Occurances")
-z = np.arange(len(dates))
-plt.xticks(z,dates, rotation = 90,fontsize = 5)
 plt.legend()
-plt.savefig('test.png')
+
+z = np.arange(len(dates))
+N=len(dates)
+plt.xticks(z,dates, rotation = 90,fontsize = 5)
+
+plt.gca().margins(x=0)
+plt.gcf().canvas.draw()
+tl = plt.gca().get_xticklabels()
+maxsize = max([t.get_window_extent().width for t in tl])
+m = 0.2
+s = maxsize/plt.gcf().dpi*N+2*m
+margin = m/plt.gcf().get_size_inches()[0]
+
+plt.savefig('graph.png')
