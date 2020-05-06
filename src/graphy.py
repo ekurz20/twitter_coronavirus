@@ -73,4 +73,4 @@ plt.legend(loc = 'upper right')
 
 plt.gcf().subplots_adjust(bottom=0.4)
 
-plt.savefig('graph2.png')
+plt.savefig('graph.png')
