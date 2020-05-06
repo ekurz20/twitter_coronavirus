@@ -54,7 +54,6 @@ plt.plot(JP, label = 'Japan')
 plt.title("Use of hashtags related to Coronavirus by country")
 plt.xlabel("Dates")
 plt.ylabel("Occurances")
-plt.legend()
 
 z = np.arange(len(dates))
 N=len(dates)
@@ -70,5 +69,8 @@ margin = m/plt.gcf().get_size_inches()[0]
 
 plt.gcf().subplots_adjust(left=margin, right=1.-margin)
 plt.gcf().set_size_inches(s, plt.gcf().get_size_inches()[1])
+plt.legend()
+
+plt.gcf().subplots_adjust(bottom=0.15)
 
 plt.savefig('graph.png')
