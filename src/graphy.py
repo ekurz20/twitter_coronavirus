@@ -31,32 +31,43 @@ for path in args.input_paths:
         print(list(tmp))
         objects = sorted(tmp['#corona'].items(), key = lambda item: (item[1],item[0]),reverse = True)
         date = path[18:26]
+        u=0
+        c=0
+        i=0
+        f=0
+        e=0
+        j=0
         for k,v in objects:
             if k == 'US':
-                if v is None:
-                    US.append(0)
-                else:
-                    US.append(np.log(v))
+                US.append(np.log(v))
+                u+=1
             if k == 'CN':
-                if v is None:
-                    CN.append(0)
                 CN.append(np.log(v))
+                c+=1
             if k == 'IT':
-                if v is None:
-                    IT.append(0)
                 IT.append(np.log(v))
+                i+=1
             if k == 'FR':
-                if v is None:
-                    FR.append(0)
                 FR.append(np.log(v))
+                f+=1
             if k == 'ES':
-                if v is None:
-                    ES.append(0)
                 ES.append(np.log(v))
+                e+=1
             if k == 'JP':
-                if v is None:
-                    JP.append(0)
                 JP.append(np.log(v))
+                j+=1
+            if u == 0:
+                US.append(0)
+            if c == 0:
+                CN.append(0)
+            if i == 0:
+                IT.append(0)
+            if f == 0:
+                FR.append(0)
+            if e == 0:
+                ES.append(0)
+            if j == 0:
+                JP.append(0)
     dates.append(date)
 plt.plot(US, label = 'United States')
 plt.plot(CN, label = 'China')
@@ -65,7 +76,7 @@ plt.plot(FR, label = 'France')
 plt.plot(ES, label = 'Spain')
 plt.plot(JP, label = 'Japan')
 
-plt.title("Use #corona by Country!")
+plt.title("Use #corona by Country")
 plt.xlabel("Dates")
 plt.ylabel("Occurances")
 
