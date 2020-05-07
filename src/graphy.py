@@ -28,7 +28,8 @@ i = 1
 for path in args.input_paths:
     with open(path)as f:
         tmp = json.load(f)
-        objects = sorted(tmp['_all'].items(), key = lambda item: (item[1],item[0]),reverse = True)
+        print(list(tmp))
+        objects = sorted(tmp['#corona'].items(), key = lambda item: (item[1],item[0]),reverse = True)
         date = path[18:26]
         for k,v in objects:
             if k == 'US':
@@ -51,7 +52,7 @@ plt.plot(FR, label = 'France')
 plt.plot(ES, label = 'Spain')
 plt.plot(JP, label = 'Japan')
 
-plt.title("Use of Hashtags Related to Coronavirus by Country")
+plt.title("Use #corona by Country")
 plt.xlabel("Dates")
 plt.ylabel("Occurances")
 
