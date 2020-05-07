@@ -56,19 +56,20 @@ for path in args.input_paths:
             if k == 'JP':
                 JP.append(np.log(v))
                 j+=1
-            if u == 0:
-                US.append(0)
-            if c == 0:
-                CN.append(0)
-            if i == 0:
-                IT.append(0)
-            if r == 0:
-                FR.append(0)
-            if e == 0:
-                ES.append(0)
-            if j == 0:
-                JP.append(0)
+        if u == 0:
+            US.append(0)
+        if c == 0:
+            CN.append(0)
+        if i == 0:
+            IT.append(0)
+        if r == 0:
+            FR.append(0)
+        if e == 0:
+            ES.append(0)
+        if j == 0:
+            JP.append(0)
     dates.append(date)
+
 plt.plot(US, label = 'United States')
 plt.plot(CN, label = 'China')
 plt.plot(IT, label = 'Italy')
