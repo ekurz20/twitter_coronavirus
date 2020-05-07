@@ -33,16 +33,29 @@ for path in args.input_paths:
         date = path[18:26]
         for k,v in objects:
             if k == 'US':
-                US.append(np.log(v))
+                if v is None:
+                    US.append(0)
+                else:
+                    US.append(np.log(v))
             if k == 'CN':
+                if v is None:
+                    CN.append(0)
                 CN.append(np.log(v))
             if k == 'IT':
+                if v is None:
+                    IT.append(0)
                 IT.append(np.log(v))
             if k == 'FR':
+                if v is None:
+                    FR.append(0)
                 FR.append(np.log(v))
             if k == 'ES':
+                if v is None:
+                    ES.append(0)
                 ES.append(np.log(v))
             if k == 'JP':
+                if v is None:
+                    JP.append(0)
                 JP.append(np.log(v))
     dates.append(date)
 plt.plot(US, label = 'United States')
@@ -52,7 +65,7 @@ plt.plot(FR, label = 'France')
 plt.plot(ES, label = 'Spain')
 plt.plot(JP, label = 'Japan')
 
-plt.title("Use #corona by Country")
+plt.title("Use #corona by Country!")
 plt.xlabel("Dates")
 plt.ylabel("Occurances")
 
