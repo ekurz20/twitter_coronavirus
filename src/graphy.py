@@ -25,18 +25,18 @@ JP = []
 
 dates = []
 i = 1
+
 for path in args.input_paths:
+    u = 0
+    c = 0
+    i = 0
+    r = 0
+    e = 0
+    j = 0
     with open(path)as f:
         tmp = json.load(f)
-        print(list(tmp))
         objects = sorted(tmp['#corona'].items(), key = lambda item: (item[1],item[0]),reverse = True)
         date = path[18:26]
-        u=0
-        c=0
-        i=0
-        f=0
-        e=0
-        j=0
         for k,v in objects:
             if k == 'US':
                 US.append(np.log(v))
@@ -49,7 +49,7 @@ for path in args.input_paths:
                 i+=1
             if k == 'FR':
                 FR.append(np.log(v))
-                f+=1
+                r+=1
             if k == 'ES':
                 ES.append(np.log(v))
                 e+=1
@@ -62,7 +62,7 @@ for path in args.input_paths:
                 CN.append(0)
             if i == 0:
                 IT.append(0)
-            if f == 0:
+            if r == 0:
                 FR.append(0)
             if e == 0:
                 ES.append(0)
@@ -76,7 +76,7 @@ plt.plot(FR, label = 'France')
 plt.plot(ES, label = 'Spain')
 plt.plot(JP, label = 'Japan')
 
-plt.title("Use #corona by Country")
+plt.title("Use of #corona by Country")
 plt.xlabel("Dates")
 plt.ylabel("Occurances")
 
