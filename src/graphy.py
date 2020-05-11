@@ -85,19 +85,19 @@ z = np.arange(len(dates))
 N=len(dates)
 plt.xticks(z,dates, rotation = 90)
 
-plt.gca().margins(x=0)
-plt.gcf().canvas.draw()
-tl = plt.gca().get_xticklabels()
-maxsize = max([t.get_window_extent().width for t in tl])
-m = 0.2
-s = maxsize/plt.gcf().dpi*N+2*m
-margin = m/plt.gcf().get_size_inches()[0]
+#plt.gca().margins(x=0)
+#plt.gcf().canvas.draw()
+#tl = plt.gca().get_xticklabels()
+#maxsize = max([t.get_window_extent().width for t in tl])
+#m = 0.2
+#s = maxsize/plt.gcf().dpi*N+2*m
+#margin = m/plt.gcf().get_size_inches()[0]
 
-plt.gcf().subplots_adjust(left=margin, right=1.-margin)
-plt.gcf().set_size_inches(s, plt.gcf().get_size_inches()[1])
+#plt.gcf().subplots_adjust(left=margin, right=1.-margin)
+#plt.gcf().set_size_inches(s, plt.gcf().get_size_inches()[1])
 plt.legend(loc = 'upper right')
 
-plt.gcf().subplots_adjust(bottom=0.4)
+#plt.gcf().subplots_adjust(bottom=0.4)
 
 n=10
 for index, label in enumerate(plt.gca().xaxis.get_ticklabels()):
