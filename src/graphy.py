@@ -104,4 +104,4 @@ for index, label in enumerate(plt.gca().xaxis.get_ticklabels()):
     if index % n != 0:
         label.set_visible(False)
 
-plt.savefig('graph.png')
+plt.savefig('graph3.png')
