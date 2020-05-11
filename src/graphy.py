@@ -78,7 +78,7 @@ plt.plot(ES, label = 'Spain')
 plt.plot(JP, label = 'Japan')
 
 plt.title("Use of #corona by Country")
-plt.xlabel("Dates")
+plt.xlabel("Dates (year-month-date)")
 plt.ylabel("ln(Occurances)")
 
 z = np.arange(len(dates))
@@ -95,7 +95,7 @@ plt.xticks(z,dates, rotation = 90)
 
 #plt.gcf().subplots_adjust(left=margin, right=1.-margin)
 #plt.gcf().set_size_inches(s, plt.gcf().get_size_inches()[1])
-plt.legend(loc = 'upper right')
+plt.legend(loc = 'upper left')
 
 plt.gcf().subplots_adjust(bottom=0.4)
 
