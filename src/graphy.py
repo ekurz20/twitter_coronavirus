@@ -79,7 +79,7 @@ plt.plot(JP, label = 'Japan')
 
 plt.title("Use of #corona by Country")
 plt.xlabel("Dates")
-plt.ylabel("Occurances")
+plt.ylabel("ln(Occurances)")
 
 z = np.arange(len(dates))
 N=len(dates)
@@ -98,5 +98,10 @@ plt.gcf().set_size_inches(s, plt.gcf().get_size_inches()[1])
 plt.legend(loc = 'upper right')
 
 plt.gcf().subplots_adjust(bottom=0.4)
+
+n=10
+for index, label in enumerate(plt.gca().xaxis.get_ticklabels()):
+    if index % n != 0:
+        label.set_visible(False)
 
 plt.savefig('graph.png')
