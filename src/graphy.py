@@ -99,9 +99,9 @@ plt.legend(loc = 'upper left')
 
 plt.gcf().subplots_adjust(bottom=0.4)
 
-n=10
+n=11
 for index, label in enumerate(plt.gca().xaxis.get_ticklabels()):
     if index % n != 0:
         label.set_visible(False)
 
-plt.savefig('finalgraph.png')
+plt.savefig('graph.png')
